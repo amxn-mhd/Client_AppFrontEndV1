@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/* body[data-sidebar-expanded="true"] .content {
+    margin-left: 200px;
+  }
+   */
+
+   body {
+    margin: 0;
+    background: 
+      linear-gradient(to right, #e3ebf6, #f9fbff),
+      url('/assets/noise.png');
+    background-size: cover;
+    background-attachment: fixed;
+  }

@@ -1,0 +1,39 @@
+<div class="register-container">
+    <h2>🩺 Register Patient</h2>
+    <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
+        <label>First Name</label>
+        <input type="text" formControlName="firstName" />
+      </div>
+      <div class="form-row">
+        <label>Last Name</label>
+        <input type="text" formControlName="lastName" />
+      </div>
+      <div class="form-row">
+        <label>Date of Birth</label>
+        <input type="date" formControlName="dob" />
+      </div>
+      <div class="form-row">
+        <label>Gender</label>
+        <select formControlName="gender">
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Email</label>
+        <input type="email" formControlName="email" />
+      </div>
+      <div class="form-row">
+        <label>Phone</label>
+        <input type="text" formControlName="phone" />
+      </div>
+      <div class="form-row">
+        <label>Address</label>
+        <textarea formControlName="address"></textarea>
+      </div>
+      <button type="submit" [disabled]="!patientForm.valid">Register</button>
+    </form>
+  </div>

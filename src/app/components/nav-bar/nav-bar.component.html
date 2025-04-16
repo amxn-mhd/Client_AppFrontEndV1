@@ -1,0 +1,11 @@
+<div class="sidebar" [class.expanded]="isExpanded()">
+    <button class="toggle-button" (click)="toggleSidebar()">
+      ☰
+    </button>
+    <nav>
+      <a *ngFor="let item of menuItems" [routerLink]="item.route" routerLinkActive="active">
+        <span class="icon">{{ item.icon }}</span>
+        <span class="label" *ngIf="isExpanded()">{{ item.label }}</span>
+      </a>
+    </nav>
+  </div>

@@ -1,0 +1,17 @@
+.layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    margin-left: 60px;
+  }
+  
+  .layout.expanded-layout .content {
+    margin-left: 200px;
+  }
+  
