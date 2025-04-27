@@ -1,7 +1,9 @@
 .layout {
     display: flex;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
   }
   
   .content {
