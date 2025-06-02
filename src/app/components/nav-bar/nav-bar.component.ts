@@ -19,7 +19,9 @@ export class NavBarComponent {
   }
   menuItems = [
     { icon: '🏠', label: 'Dashboard', route: '/dashboard' },
-    { icon: '⚙️', label: 'Register', route: '/register' },
+    { icon: '📋', label: 'Register', route: '/register' },
+    { icon: '🪪', label: 'Patient', route: '/patient/search'},
+    { icon: '💉', label: 'Medicine', route: '/medicine'}
   ];
   
 }

@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .spinner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ccc;
+    border-top-color: #272944;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .patient-details-container {
+    background: #f2f2f7;
+    padding: 3rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tab {
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    background-color: white;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 40%;
+    height: 2px;
+    background-color: #272944;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+  
+  .tab:hover {
+    background-color: #f0f0f5;
+    color: #000;
+    transform: scale(1.03);
+  }
+  
+  .tab:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  
+  .tab.active {
+    background-color: #272944;
+    color: #fff;
+    font-weight: 600;
+    transform: scale(1.05);
+  }
+  
+  .tab.active::after {
+    opacity: 1;
+    transform: scaleX(1);
+    background-color: #fff;
+  }
+  
+  
+  
+  .patient-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    padding: 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  /* .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+  } */
+  
+  /* .btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .btn.save {
+    background-color: #272944;
+    color: white;
+  }
+  
+  .btn.cancel {
+    background-color: #272944;
+    color: white;
+  } */
+
+  /* .action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .button {
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .button.save {
+    background-color: #272944;
+    color: white;
+  }
+  
+  .button.cancel {
+    background-color: #f5f5f5;
+    color: #272944;
+    border: 1px solid #ccc;
+  }
+  
+  .button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  }
+  
+  .button.save:hover {
+    background-color: #1c1d32;
+  }
+  
+  .button.cancel:hover {
+    background-color: #eaeaea;
+    color: #000;
+  } */
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 
+      background-color 0.3s ease, 
+      color 0.3s ease,
+      transform 0.2s ease,
+      box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    outline: none;
+    animation: fadeIn 0.4s ease-in;
+  }
+  
+  .btn.save {
+    background-color: #272944;
+    color: #ffffff;
+  }
+  
+  .btn.cancel {
+    background-color: #f0f0f0;
+    color: #272944;
+    border: 1px solid #ddd;
+  }
+  
+  .btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn.save:hover {
+    background-color: #1e1f35;
+  }
+  
+  .btn.cancel:hover {
+    background-color: #e6e6e6;
+    color: #000000;
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease;
+  }
+  
+  .btn.save:active {
+    background-color: #3a3c5d;
+  }
+  
+  .btn.cancel:active {
+    background-color: #d9d9d9;
+    color: #111;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  

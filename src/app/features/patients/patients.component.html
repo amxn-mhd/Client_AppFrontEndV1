@@ -1,0 +1,71 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSearch()" class="search-form">
+    <h2 class="form-title">Search Patients</h2>
+  
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" formControlName="firstName" type="text" placeholder="Enter first name" />
+      </div>
+  
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" formControlName="lastName" type="text" placeholder="Enter last name" />
+      </div>
+  
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" formControlName="phoneNumber" type="text" placeholder="Enter phone number" />
+      </div>
+  
+      <div class="form-group">
+        <label for="patientId">Patient ID</label>
+        <input id="patientId" formControlName="patientId" type="text" placeholder="Enter patient ID" />
+      </div>
+  
+      <div class="form-group full-width">
+        <label for="dateCreated">Date Created</label>
+        <input id="dateCreated" formControlName="dateCreated" type="date" />
+      </div>
+    </div>
+  
+    <div class="button-wrapper">
+      <button type="submit">🔍 Search</button>
+    </div>
+  </form>
+  <div *ngIf="isSearching" class="spinner-wrapper">
+    <div class="spinner"></div>
+    <div class="spinner-text">Searching...</div>
+  </div>
+  
+  <div *ngIf="noResults && !isSearching" class="no-results-banner">
+    <div class="icon">😕</div>
+    <div class="text">No results found for your search criteria.</div>
+  </div>
+
+  <table *ngIf="searchResults.length > 0" class="results-table">
+    <thead>
+      <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Phone Number</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of searchResults">
+        <td>{{ patient.patientID }}</td>
+        <td>{{ patient.firstName }} {{ patient.lastName }}</td>
+        <td>{{ patient.contactNumber }}</td>
+        <td>{{ patient.age }}</td>
+        <td>{{ patient.gender }}</td>
+        <td>
+            <a [routerLink]="['/patient', 'details', patient.patientID]" title="View Details">
+                ⚙️
+              </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
